@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include partials/head %>
+    </head>
+    <body class='bckColor'>
+        <header>
+            <h1 class='h1Results'>Results</h1>
+        </header>
+        <main>
+            <% dataResults['Search'].forEach(function(movie){ %>
+                <div class="results">
+                <img src="<%= movie['Poster'] %>" alt="" id='modalImg'>    
+                <ul>
+                    <li id='textAdd'><b>Title: </b><%= movie['Title'] %></li>
+                    <li><b>Year: </b><%= movie['Year'] %></li>
+                    <li><b>Type: </b><%= movie['Type']%></li>
+                </ul>
+                </div>
+                <% }) %> 
+        </main>
+        <!-- Image Modal -->
+        <div id='imgModal' class='modal'>
+            <span class="close">&times;</span>
+            <img class="imageResult" id='img1'>
+            <div id='caption'></div>
+        </div>
+        <script src='movie.js'></script>
+        <footer>
+            <a class='aResults' href="/"> Search Again</a>
+        </footer>
+    </body>
+</html>

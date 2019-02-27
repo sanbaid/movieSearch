@@ -127,7 +127,7 @@ footer{
 .imageResult{
     position: absolute;
     top: 30%;
-    right: 30%;
+    right: 35%;
     z-index: 1;
 }
 .imageResult, #caption{

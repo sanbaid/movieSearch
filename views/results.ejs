@@ -9,15 +9,15 @@
         </header>
         <main>
             <% dataResults['Search'].forEach(function(movie){ %>
-                <div class="results">
-                <img src="<%= movie['Poster'] %>" alt="" id='modalImg'>    
+            <div class="results">
+                <img src="<%= movie['Poster'] %>" alt="<%= movie['Title'] %>" class='resultImg'>    
                 <ul>
-                    <li id='textAdd'><b>Title: </b><%= movie['Title'] %></li>
+                    <li><b>Title: </b><%= movie['Title'] %></li>
                     <li><b>Year: </b><%= movie['Year'] %></li>
                     <li><b>Type: </b><%= movie['Type']%></li>
                 </ul>
-                </div>
-                <% }) %> 
+            </div>
+            <% }) %> 
         </main>
         <!-- Image Modal -->
         <div id='imgModal' class='modal'>

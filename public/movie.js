@@ -1,16 +1,20 @@
+let images = document.querySelectorAll('.results img');
+let modalImage = document.getElementById('img1');
 let modal = document.getElementById('imgModal');
-let img = document.getElementById('modalImg');
-let imgFloat = document.getElementById('img1');
-let text = document.getElementById('caption');
-let addingText = document.getElementById('textAdd');
+let close = document.getElementsByClassName('close')[0];
+let captions = document.getElementById('caption');
 
-img.addEventListener('onclick', function(){
-    modal.style.display = 'block';
-    imgFloat.src = this.src;
-    text.innerHtml = addingText;
+/* images for the modal */
+images.forEach(function(image){
+    image.addEventListener('click', function(event){
+        modal.style.display = 'block';
+        modalImage.src = event.target.src;
+        captions.innerHTML = this.alt;
+    })
 })
 
-let close = document.getElementsByClassName('close')[0];
-close.addEventListener('onclick', function(){
+
+/* close button */
+close.addEventListener('click', function(){
     modal.style.display = 'none';
 })

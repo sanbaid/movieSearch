@@ -60,7 +60,7 @@ div > form > input:nth-child(2){
     }
     main{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1rem;
     }
 }
@@ -78,6 +78,7 @@ div > form > input:nth-child(2){
     max-height: 180px;
     align-self: center;
     padding-top: 10px;
+    cursor: pointer;
 }
 .results > ul > li {
     list-style: none;
@@ -114,8 +115,7 @@ footer{
 .modal{
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 100%;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
@@ -123,6 +123,12 @@ footer{
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
+}
+.imageResult{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    z-index: 1;
 }
 .imageResult, #caption{
     -webkit-animation-name: zoom;
@@ -146,9 +152,18 @@ footer{
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+    z-index: 2;
 }
 .close:hover, .close:focus{
     color:#bbb;
     text-decoration: none;
     cursor: pointer;
+}
+#caption{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    top: 20px;
+    font-size: 3rem;
 }
